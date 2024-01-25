@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { FaStar } from "react-icons/fa";
 
 export default function TaskList({ tasks, onEdit, onDelete, onFav }) {
@@ -29,6 +30,7 @@ export default function TaskList({ tasks, onEdit, onDelete, onFav }) {
                         </th>
                     </tr>
                 </thead>
+                
                 <tbody>
                     {tasks.map((task) => (
                         <tr
@@ -36,6 +38,9 @@ export default function TaskList({ tasks, onEdit, onDelete, onFav }) {
                             className="border-b border-[#2E3443] [&>td]:align-baseline [&>td]:px-4 [&>td]:py-2">
                             <td>
                                 <button onClick={() => onFav(task.id)}>
+
+                                    {/* {task.isFavorite ? "Favorite" : "Not Favorite"} -------------------------------------- */}
+
                                     {task.isFavorite ? (
                                         <FaStar color="yellow" />
                                     ) : (
@@ -47,6 +52,8 @@ export default function TaskList({ tasks, onEdit, onDelete, onFav }) {
                             <td>
                                 <div>{task.description}</div>
                             </td>
+
+                            {/* Tags --------------------------------------------------------------------- */}
                             <td>
                                 <ul className="flex justify-center gap-1.5 flex-wrap">
                                     {task.tags.map((tag) => (

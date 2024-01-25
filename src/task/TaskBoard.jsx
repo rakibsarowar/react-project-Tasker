@@ -7,8 +7,10 @@ import TaskList from "./Tasklist";
 import NoTasksFound from "./NoTaskFound";
 
 export default function TaskBoard() {
+
+    // initial data structure | for testing | which will state initial value ----------------------------------------- 
     const defaultTask = {
-        id: crypto.randomUUID(),
+        id: crypto.randomUUID(), // built in js function to create id
         title: "Learn React Native",
         description:
             "I want to Learn React such thanI can treat it like my slave and make it do whatever I want to do.",
@@ -117,7 +119,7 @@ export default function TaskBoard() {
                     {
                         tasks.length > 0 ?
                         (<TaskList
-                            tasks={tasks}
+                            tasks={tasks}  // sending state value to task list -----------------------------------------
                             onEdit={handleEditTask}
                             onDelete={handleDeleteTask}
                             onFav={handleFavorite}
